@@ -131,7 +131,7 @@ const config = {
           enforce: true,
         },
         heavy: {
-          test: /[\\/]node_modules[\\/](kuromoji|bayesian-bm25|negaposi-analyzer-ja)[\\/]/,
+          test: /[\\/]node_modules[\\/](kuromoji|bayesian-bm25)[\\/]/,
           name: 'vendor-heavy',
           chunks: 'async',
           priority: 20,

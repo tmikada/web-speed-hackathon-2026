@@ -84,9 +84,6 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
-      negaposi-analyzer-ja:
-        specifier: 1.0.1
-        version: 1.0.1
       normalize.css:
         specifier: 8.0.1
         version: 8.0.1
@@ -301,9 +298,15 @@ importers:
       http-errors:
         specifier: 2.0.0
         version: 2.0.0
+      kuromoji:
+        specifier: 0.1.2
+        version: 0.1.2
       music-metadata:
         specifier: 11.10.3
         version: 11.10.3
+      negaposi-analyzer-ja:
+        specifier: 1.0.1
+        version: 1.0.1
       sequelize:
         specifier: 6.37.7
         version: 6.37.7(sqlite3@5.1.7)
