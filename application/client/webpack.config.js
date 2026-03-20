@@ -31,7 +31,6 @@ const config = {
   devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
   entry: {
     main: [
-      "core-js",
       "regenerator-runtime/runtime",
       "jquery-binarytransport",
       path.resolve(SRC_PATH, "./index.css"),
@@ -147,14 +146,14 @@ const config = {
         webllm: {
           test: /[\\/]node_modules[\\/]@mlc-ai[\\/]/,
           name: 'vendor-webllm',
-          chunks: 'all',
+          chunks: 'async',
           priority: 25,
           enforce: true,
         },
         heavy: {
           test: /[\\/]node_modules[\\/](@ffmpeg|@imagemagick|kuromoji|bayesian-bm25|negaposi-analyzer-ja)[\\/]/,
           name: 'vendor-heavy',
-          chunks: 'all',
+          chunks: 'async',
           priority: 20,
           enforce: true,
         },
