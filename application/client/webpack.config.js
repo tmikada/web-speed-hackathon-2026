@@ -93,7 +93,7 @@ const config = {
       ],
     }),
     new HtmlWebpackPlugin({
-      inject: 'head',
+      inject: false,
       template: path.resolve(SRC_PATH, "./index.html"),
     }),
     ...(useAnalyzer
