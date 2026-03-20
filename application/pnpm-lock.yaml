@@ -36,9 +36,6 @@ importers:
       bayesian-bm25:
         specifier: 0.4.0
         version: 0.4.0
-      bluebird:
-        specifier: 3.7.2
-        version: 3.7.2
       buffer:
         specifier: 6.0.3
         version: 6.0.3
@@ -151,9 +148,6 @@ importers:
       '@tsconfig/strictest':
         specifier: 2.0.8
         version: 2.0.8
-      '@types/bluebird':
-        specifier: 3.5.42
-        version: 3.5.42
       '@types/common-tags':
         specifier: 1.8.4
         version: 1.8.4
@@ -1875,9 +1869,6 @@ packages:
 
   '@types/bcrypt@6.0.0':
     resolution: {integrity: sha512-/oJGukuH3D2+D+3H4JWLaAsJ/ji86dhRidzZ/Od7H/i8g+aCmvkeCc6Ni/f9uxGLSQVCRZkX2/lqEFG2BvWtlQ==}
-
-  '@types/bluebird@3.5.42':
-    resolution: {integrity: sha512-Jhy+MWRlro6UjVi578V/4ZGNfeCOcNCp0YaFNIUGFKlImowqwb1O/22wDVk3FDGMLqxdpOV3qQHD5fPEH4hK6A==}
 
   '@types/body-parser@1.19.6':
     resolution: {integrity: sha512-HLFeCYgz89uk22N5Qg3dvGvsv46B8GLvKKo1zKG4NybA8U2DiEO3w9lqGg29t/tfLRJpJ6iQxnVw4OnB7MoM9g==}
@@ -6586,8 +6577,6 @@ snapshots:
   '@types/bcrypt@6.0.0':
     dependencies:
       '@types/node': 22.18.8
-
-  '@types/bluebird@3.5.42': {}
 
   '@types/body-parser@1.19.6':
     dependencies:

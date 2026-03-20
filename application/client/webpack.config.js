@@ -101,6 +101,7 @@ const config = {
     alias: {
       "bayesian-bm25$": path.resolve(__dirname, "node_modules", "bayesian-bm25/dist/index.js"),
       ["kuromoji$"]: path.resolve(__dirname, "node_modules", "kuromoji/build/kuromoji.js"),
+      "bluebird$": path.resolve(SRC_PATH, "./shims/bluebird.js"),
     },
     fallback: {
       fs: false,
