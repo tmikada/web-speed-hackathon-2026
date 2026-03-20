@@ -31,6 +31,7 @@
     "normalize.css": "8.0.1",
     "omggif": "1.0.10",
     "pako": "2.1.0",
+    "preact": "10.26.6",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-helmet": "npm:@dr.pogodin/react-helmet@3.0.4",
