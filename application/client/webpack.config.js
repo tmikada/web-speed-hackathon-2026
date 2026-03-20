@@ -31,7 +31,6 @@ const config = {
   devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
   entry: {
     main: [
-      "jquery-binarytransport",
       path.resolve(SRC_PATH, "./tailwind.css"),
       path.resolve(SRC_PATH, "./index.css"),
       path.resolve(SRC_PATH, "./buildinfo.ts"),
@@ -62,17 +61,15 @@ const config = {
   },
   output: {
     chunkFilename: "scripts/chunk-[contenthash].js",
-    filename: "scripts/[name].js",
+    filename: "scripts/[name].[contenthash:8].js",
     path: DIST_PATH,
     publicPath: "/",
     clean: true,
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: "jquery",
       AudioContext: ["standardized-audio-context", "AudioContext"],
       Buffer: ["buffer", "Buffer"],
-      "window.jQuery": "jquery",
     }),
     new webpack.EnvironmentPlugin({
       BUILD_DATE: new Date().toISOString(),
@@ -81,7 +78,7 @@ const config = {
       NODE_ENV: process.env.NODE_ENV || "production",
     }),
     new MiniCssExtractPlugin({
-      filename: "styles/[name].css",
+      filename: "styles/[name].[contenthash:8].css",
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -104,6 +101,7 @@ const config = {
     alias: {
       "bayesian-bm25$": path.resolve(__dirname, "node_modules", "bayesian-bm25/dist/index.js"),
       ["kuromoji$"]: path.resolve(__dirname, "node_modules", "kuromoji/build/kuromoji.js"),
+      "bluebird$": path.resolve(SRC_PATH, "./shims/bluebird.js"),
     },
     fallback: {
       fs: false,
@@ -128,6 +126,13 @@ const config = {
           name: 'vendor-webllm',
           chunks: 'async',
           priority: 25,
+          enforce: true,
+        },
+        crok: {
+          test: /[\\/]node_modules[\\/](katex|rehype-katex|remark-math|remark-gfm|react-markdown|react-syntax-highlighter|refractor|highlight\.js|bluebird|unified|vfile|mdast-util-[^/]+|hast-util-[^/]+|micromark[^/]*|zwitch|comma-separated-tokens|space-separated-tokens|hastscript|html-url-attributes|property-information|devlop|bail|is-plain-obj|trough|extend)[\\/]/,
+          name: 'vendor-crok',
+          chunks: 'async',
+          priority: 22,
           enforce: true,
         },
         heavy: {
