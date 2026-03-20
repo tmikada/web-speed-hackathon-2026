@@ -104,21 +104,6 @@ const config = {
     alias: {
       "bayesian-bm25$": path.resolve(__dirname, "node_modules", "bayesian-bm25/dist/index.js"),
       ["kuromoji$"]: path.resolve(__dirname, "node_modules", "kuromoji/build/kuromoji.js"),
-      "@ffmpeg/ffmpeg$": path.resolve(
-        __dirname,
-        "node_modules",
-        "@ffmpeg/ffmpeg/dist/esm/index.js",
-      ),
-      "@ffmpeg/core$": path.resolve(
-        __dirname,
-        "node_modules",
-        "@ffmpeg/core/dist/umd/ffmpeg-core.js",
-      ),
-      "@ffmpeg/core/wasm$": path.resolve(
-        __dirname,
-        "node_modules",
-        "@ffmpeg/core/dist/umd/ffmpeg-core.wasm",
-      ),
       "@imagemagick/magick-wasm/magick.wasm$": path.resolve(
         __dirname,
         "node_modules",
@@ -151,7 +136,7 @@ const config = {
           enforce: true,
         },
         heavy: {
-          test: /[\\/]node_modules[\\/](@ffmpeg|@imagemagick|kuromoji|bayesian-bm25|negaposi-analyzer-ja)[\\/]/,
+          test: /[\\/]node_modules[\\/](@imagemagick|kuromoji|bayesian-bm25|negaposi-analyzer-ja)[\\/]/,
           name: 'vendor-heavy',
           chunks: 'async',
           priority: 20,
@@ -172,12 +157,7 @@ const config = {
     sideEffects: false,
   },
   cache: false,
-  ignoreWarnings: [
-    {
-      module: /@ffmpeg/,
-      message: /Critical dependency: the request of a dependency is an expression/,
-    },
-  ],
+  ignoreWarnings: [],
 };
 
 module.exports = config;
