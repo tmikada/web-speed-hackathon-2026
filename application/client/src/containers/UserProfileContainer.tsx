@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router";
 
 import { InfiniteScroll } from "@web-speed-hackathon-2026/client/src/components/foundation/InfiniteScroll";
@@ -20,16 +20,12 @@ export const UserProfileContainer = () => {
     fetchJSON,
   );
 
-  useEffect(() => {
-    if (isLoadingUser) {
-      document.title = "読込中 - CaX";
-    } else if (user != null) {
-      document.title = `${user.name} さんのタイムライン - CaX`;
-    }
-  }, [isLoadingUser, user]);
-
   if (isLoadingUser) {
-    return null;
+    return (
+      <Helmet>
+        <title>読込中 - CaX</title>
+      </Helmet>
+    );
   }
 
   if (user === null) {
@@ -38,6 +34,9 @@ export const UserProfileContainer = () => {
 
   return (
     <InfiniteScroll fetchMore={fetchMore} items={posts}>
+      <Helmet>
+        <title>{user.name} さんのタイムライン - CaX</title>
+      </Helmet>
       <UserProfilePage timeline={posts} user={user} />
     </InfiniteScroll>
   );

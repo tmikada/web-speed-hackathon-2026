@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router";
 
 import { DirectMessageGate } from "@web-speed-hackathon-2026/client/src/components/direct_message/DirectMessageGate";
@@ -121,12 +122,11 @@ export const DirectMessageContainer = ({ activeUser, authModalId }: Props) => {
   const peer =
     conversation.initiator.id !== activeUser?.id ? conversation.initiator : conversation.member;
 
-  useEffect(() => {
-    document.title = `${peer.name} さんとのダイレクトメッセージ - CaX`;
-  }, [peer.name]);
-
   return (
     <>
+      <Helmet>
+        <title>{peer.name} さんとのダイレクトメッセージ - CaX</title>
+      </Helmet>
       <DirectMessagePage
         conversationError={conversationError}
         conversation={conversation}

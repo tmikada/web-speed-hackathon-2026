@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+import { Helmet } from "react-helmet";
 
 import { CrokGate } from "@web-speed-hackathon-2026/client/src/components/crok/CrokGate";
 import { CrokPage } from "@web-speed-hackathon-2026/client/src/components/crok/CrokPage";
@@ -75,11 +76,12 @@ export const CrokContainer = ({ activeUser, authModalId }: Props) => {
     );
   }
 
-  useEffect(() => {
-    document.title = "Crok - CaX";
-  }, []);
-
   return (
-    <CrokPage isStreaming={isStreaming} messages={displayMessages} onSendMessage={sendMessage} />
+    <>
+      <Helmet>
+        <title>Crok - CaX</title>
+      </Helmet>
+      <CrokPage isStreaming={isStreaming} messages={displayMessages} onSendMessage={sendMessage} />
+    </>
   );
 };

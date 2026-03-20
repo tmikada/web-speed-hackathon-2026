@@ -1,10 +1,14 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 import { NotFoundPage } from "@web-speed-hackathon-2026/client/src/components/application/NotFoundPage";
 
 export const NotFoundContainer = () => {
-  useEffect(() => {
-    document.title = "ページが見つかりません - CaX";
-  }, []);
-  return <NotFoundPage />;
+  return (
+    <>
+      <Helmet>
+        <title>ページが見つかりません - CaX</title>
+      </Helmet>
+      <NotFoundPage />
+    </>
+  );
 };

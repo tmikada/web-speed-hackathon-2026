@@ -1,4 +1,5 @@
-import { useEffect, useId } from "react";
+import { useId } from "react";
+import { Helmet } from "react-helmet";
 
 import { DirectMessageGate } from "@web-speed-hackathon-2026/client/src/components/direct_message/DirectMessageGate";
 import { DirectMessageListPage } from "@web-speed-hackathon-2026/client/src/components/direct_message/DirectMessageListPage";
@@ -21,12 +22,11 @@ export const DirectMessageListContainer = ({ activeUser, authModalId }: Props) =
     );
   }
 
-  useEffect(() => {
-    document.title = "ダイレクトメッセージ - CaX";
-  }, []);
-
   return (
     <>
+      <Helmet>
+        <title>ダイレクトメッセージ - CaX</title>
+      </Helmet>
       <DirectMessageListPage activeUser={activeUser} newDmModalId={newDmModalId} />
       <NewDirectMessageModalContainer id={newDmModalId} />
     </>
