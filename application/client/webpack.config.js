@@ -93,7 +93,7 @@ const config = {
       ],
     }),
     new HtmlWebpackPlugin({
-      inject: 'body',
+      inject: 'head',
       template: path.resolve(SRC_PATH, "./index.html"),
     }),
     ...(useAnalyzer
@@ -149,10 +149,10 @@ const config = {
     },
     concatenateModules: true,
     usedExports: true,
-    providedExports: false,
+    providedExports: true,
     sideEffects: false,
   },
-  cache: false,
+  // cache: false,
   ignoreWarnings: [],
 };
 

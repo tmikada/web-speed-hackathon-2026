@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CaX</title>
+    <% for (const css of htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= css %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<%= css %>"></noscript>
+    <% } %>
   </head>
   <body class="bg-cax-canvas text-cax-text">
     <div id="app"></div>
+    <% for (const js of htmlWebpackPlugin.files.js) { %>
+    <script defer src="<%= js %>"></script>
+    <% } %>
   </body>
 </html>
