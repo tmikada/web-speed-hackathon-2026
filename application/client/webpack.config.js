@@ -115,7 +115,7 @@ const config = {
       chunks: 'all',
       cacheGroups: {
         react: {
-          test: /[\\/]node_modules[\\/](react|react-dom|react-router|redux|react-redux|redux-form|scheduler)[\\/]/,
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router|scheduler)[\\/]/,
           name: 'vendor-react',
           chunks: 'all',
           priority: 30,
