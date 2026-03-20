@@ -145,7 +145,7 @@ const config = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'all',
+          chunks: 'initial',
           priority: 10,
           enforce: true,
         },
