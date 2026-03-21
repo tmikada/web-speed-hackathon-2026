@@ -125,14 +125,7 @@ const config = {
           priority: 30,
           enforce: true,
         },
-        webllm: {
-          test: /[\\/]node_modules[\\/]@mlc-ai[\\/]/,
-          name: 'vendor-webllm',
-          chunks: 'async',
-          priority: 25,
-          enforce: true,
-        },
-        crok: {
+crok: {
           test: /[\\/]node_modules[\\/](katex|rehype-katex|remark-math|remark-gfm|react-markdown|react-syntax-highlighter|refractor|highlight\.js|bluebird|unified|vfile|mdast-util-[^/]+|hast-util-[^/]+|micromark[^/]*|zwitch|comma-separated-tokens|space-separated-tokens|hastscript|html-url-attributes|property-information|devlop|bail|is-plain-obj|trough|extend)[\\/]/,
           name: 'vendor-crok',
           chunks: 'async',
